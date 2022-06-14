@@ -20,6 +20,7 @@ BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(setuptools-scm)
 BuildRequires:	python-pip
 BuildRequires:	python3dist(wheel)
+BuildRequires:	python3dist(tomli)
 %if %{with bootstrap}
 BuildRequires:  python3dist(tox)
 %endif
