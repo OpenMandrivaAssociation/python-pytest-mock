@@ -18,6 +18,8 @@ BuildRequires:  python3dist(pytest) >= 5
 BuildRequires:  python3dist(pytest-asyncio)
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(setuptools-scm)
+BuildRequires:	python-pip
+BuildRequires:	python3dist(wheel)
 %if %{with bootstrap}
 BuildRequires:  python3dist(tox)
 %endif
