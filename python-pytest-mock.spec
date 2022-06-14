@@ -1,15 +1,15 @@
-# Created by pyp2rpm-3.3.5
 %global pypi_name pytest-mock
 %bcond_with bootstrap
 
 Name:           python-%{pypi_name}
-Version:        3.6.1
+Version:        3.7.0
 Release:        1
 Summary:        Thin-wrapper around the mock package for easier use with pytest
 Group:          Development/Python
 License:        MIT
 URL:            https://github.com/pytest-dev/pytest-mock/
-Source0:        %{pypi_name}-%{version}.tar.gz
+# Also https://pypi.org/project/pytest-mock/
+Source0:        https://files.pythonhosted.org/packages/source/p/pytest-mock/pytest-mock-%{version}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  python3-devel
@@ -49,4 +49,3 @@ rm -rf %{pypi_name}.egg-info
 %doc README.rst
 %{python3_sitelib}/pytest_mock
 %{python3_sitelib}/pytest_mock-%{version}-py%{python3_version}.egg-info
-
