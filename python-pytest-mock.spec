@@ -2,7 +2,7 @@
 %bcond_with bootstrap
 
 Name:           python-%{pypi_name}
-Version:        3.15.1
+Version:        3.16.0
 Release:        1
 Summary:        Thin-wrapper around the mock package for easier use with pytest
 Group:          Development/Python
@@ -13,9 +13,7 @@ Source0:        https://files.pythonhosted.org/packages/source/p/pytest_mock/pyt
 BuildArch:      noarch
 
 BuildSystem:	python
-BuildRequires:  python%{pyver}dist(pre-commit)
 BuildRequires:  python%{pyver}dist(pytest) >= 5
-BuildRequires:  python%{pyver}dist(pytest-asyncio)
 BuildRequires:  python%{pyver}dist(setuptools)
 BuildRequires:  python%{pyver}dist(setuptools-scm)
 BuildRequires:	python%{pyver}dist(pip)
@@ -24,6 +22,10 @@ BuildRequires:	python%{pyver}dist(tomli)
 %if %{with bootstrap}
 BuildRequires:  python%{pyver}dist(tox)
 %endif
+
+%build -p
+# The sdist is not a git checkout.
+export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 
 %description
  pytest-mock This plugin provides a mocker fixture which is a thin-wrapper
